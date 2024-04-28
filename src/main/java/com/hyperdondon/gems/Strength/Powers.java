@@ -23,7 +23,6 @@ import java.util.HashMap;
 import java.util.Objects;
 import java.util.UUID;
 
-//test
 
 public final class Powers implements Listener {
 
@@ -220,8 +219,10 @@ public final class Powers implements Listener {
 
     public static void StrengthTicks() {
         for (Player p : Bukkit.getOnlinePlayers()) {
-            if (ChadParticles.get(p.getUniqueId()) == 1) {
-                
+            if (ChadParticles.containsKey(p.getUniqueId())) {
+                if (ChadParticles.get(p.getUniqueId()) == 1) {
+
+                }
             }
         }
     }
