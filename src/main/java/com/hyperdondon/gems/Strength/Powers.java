@@ -219,13 +219,15 @@ public final class Powers implements Listener {
 
     public static void StrengthTicks() {
         for (Player p : Bukkit.getOnlinePlayers()) {
+            //p.getWorld().spawnParticle(Particle.SMOKE_NORMAL, p.getEyeLocation().getX(), p.getEyeLocation().getY(), p.getEyeLocation().getZ(), 0);
             if (ChadParticles.containsKey(p.getUniqueId())) {
                 if (ChadParticles.get(p.getUniqueId()) == 1) {
-
+                    //p.getWorld().spawnParticle(Particle.SMOKE_NORMAL, p.getEyeLocation(), 0);
                 }
             }
         }
     }
+
 
     public static void StrengthSeconds() {
         for (Player p : Bukkit.getOnlinePlayers()) {
