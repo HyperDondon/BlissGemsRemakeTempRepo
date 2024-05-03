@@ -1,5 +1,6 @@
 package com.hyperdondon;
 
+import com.hyperdondon.gems.Strength.Powers;
 import net.md_5.bungee.api.ChatColor;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
@@ -20,15 +21,14 @@ public final class SlashBliss implements CommandExecutor, Listener {
     public boolean onCommand(@NotNull CommandSender commandSender, Command command, String s, String[] args) {
         if (args.length == 1) {
             HumanEntity a = (HumanEntity) commandSender;
-            Vector v1 = a.getLocation().getDirection();
-            Location loc = a.getEyeLocation();
-            Vector direction = loc.getDirection();
-            double dx = direction.getX() * a.getWidth() / 2;
-            double dy = direction.getY() * a.getWidth() / 2;
-            double dz = direction.getZ() * a.getWidth() / 2;
-            loc.add(dx, dy, dz);
 
-            a.getWorld().spawnParticle(Particle.SMOKE_NORMAL,  loc, 0);
+            Powers.ChadParticles.put(a.getUniqueId(), 1);
+
+            //a.getWorld().spawnParticle(Particle.SMOKE_NORMAL,  loc2, 0);
+
+
+
+
             //a.getWorld().spawnEntity(a.getEyeLocation(), EntityType.ZOMBIE);
             return true;
         }

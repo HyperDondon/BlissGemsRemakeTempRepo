@@ -222,7 +222,51 @@ public final class Powers implements Listener {
             //p.getWorld().spawnParticle(Particle.SMOKE_NORMAL, p.getEyeLocation().getX(), p.getEyeLocation().getY(), p.getEyeLocation().getZ(), 0);
             if (ChadParticles.containsKey(p.getUniqueId())) {
                 if (ChadParticles.get(p.getUniqueId()) == 1) {
-                    //p.getWorld().spawnParticle(Particle.SMOKE_NORMAL, p.getEyeLocation(), 0);
+
+                    Vector direction = p.getLocation().getDirection().normalize();
+                    direction = direction.multiply(0.3);
+
+                    double yaw = Math.toRadians(p.getLocation().getYaw());
+
+                    double leftX = Math.sin(yaw + Math.PI / 2); // left and right
+
+                    double leftZ = -Math.cos(yaw + Math.PI / 1.5); // Back and forth,
+
+                    Vector left = new Vector(leftX, 0, leftZ);
+
+                    direction.add(left);
+
+                    Location loc = p.getLocation().add(direction);
+
+                    loc.setY(loc.getY() + 1.3);
+
+
+                    //fuck this math bbruh
+
+
+
+                    Vector direction2 = p.getLocation().getDirection().normalize();
+                    direction2 = direction2.multiply(0.3);
+
+                    double yaw2 = Math.toRadians(p.getLocation().getYaw());
+
+                    double leftX2 = Math.sin(yaw2 + Math.PI / 1); // left and right
+
+                    double leftZ2 = -Math.cos(yaw2 + Math.PI / 2); // Back and forth,
+
+                    Vector left2 = new Vector(leftX2, 0, leftZ2);
+
+                    direction2.add(left2);
+
+                    Location loc2 = p.getLocation().add(direction2);
+
+                    loc2.setY(loc2.getY() + 1.3);
+
+                    p.getWorld().spawnParticle(Particle.SMOKE_NORMAL,  loc, 0);
+
+                    p.getWorld().spawnParticle(Particle.SMOKE_NORMAL,  loc2, 0);
+
+
                 }
             }
         }
