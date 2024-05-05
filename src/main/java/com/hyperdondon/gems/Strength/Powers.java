@@ -230,7 +230,7 @@ public final class Powers implements Listener {
 
                     double leftX = Math.sin(yaw + Math.PI / 2); // left and right
 
-                    double leftZ = -Math.cos(yaw + Math.PI / 1.5); // Back and forth,
+                    double leftZ = Math.cos(yaw + Math.PI / 1.5); // Back and forth,
 
                     Vector left = new Vector(leftX, 0, leftZ);
 
@@ -252,7 +252,7 @@ public final class Powers implements Listener {
 
                     double leftX2 = Math.sin(yaw2 + Math.PI / 1); // left and right
 
-                    double leftZ2 = -Math.cos(yaw2 + Math.PI / 2); // Back and forth,
+                    double leftZ2 = Math.cos(yaw2 + Math.PI / 2); // Back and forth,
 
                     Vector left2 = new Vector(leftX2, 0, leftZ2);
 
